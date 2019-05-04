@@ -1,0 +1,2 @@
+class Strap < Product
+end

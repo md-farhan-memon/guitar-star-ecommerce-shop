@@ -1,0 +1,58 @@
+.card
+  .card-body
+    .row
+      .col-md-3-24
+        %strong Filter by:
+      .col-md-21-24
+        %ul.list-inline
+          %li.list-inline-item.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => ""} Supplier type
+            = succeed "" do
+              .dropdown-menu.p-3{:style => "max-width:400px;"}
+                %label.form-check
+                  %a{:href => ""}
+                    %input.form-check-input{:type => "checkbox"}
+                      Good supplier
+                %label.form-check
+                  %a{:href => ""}
+                    %input.form-check-input{:type => "checkbox"}
+                      Best supplier
+                %label.form-check
+                  %a{:href => ""}
+                    %input.form-check-input{:type => "checkbox"}
+                      New supplier
+              %li.list-inline-item.dropdown
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"} Country
+                = succeed "" do
+                  .dropdown-menu.p-3{:style => "max-width:400px;"}
+                    %label.form-check
+                      %a{:href => "#"}
+                        %input.form-check-input{:type => "checkbox"}
+                          China
+                    %label.form-check
+                      %a{:href => "#"}
+                        %input.form-check-input{:type => "checkbox"}
+                          Japan
+                    %label.form-check
+                      %a{:href => "#"}
+                        %input.form-check-input{:type => "checkbox"}
+                          Uzbekistan
+                    %label.form-check
+                      %a{:href => "#"}
+                        %input.form-check-input{:type => "checkbox"}
+                          Russia
+                    %li.list-inline-item
+                      %a{:href => "#"} Product type
+                    %li.list-inline-item
+                      %a{:href => "#"} Brand name
+                    %li.list-inline-item
+                      %a{:href => "#"} Color
+                    %li.list-inline-item
+                      %a{:href => "#"} Size
+                    %li.list-inline-item
+                      .form-inline
+                        %label.mr-2 Price
+                        %input.form-control.form-control-sm{:placeholder => "Min", :type => "number"}
+                          %span.px-2 -
+                          %input.form-control.form-control-sm{:placeholder => "Max", :type => "number"}
+                            %button.btn.btn-sm.ml-2{:type => "submit"} Ok

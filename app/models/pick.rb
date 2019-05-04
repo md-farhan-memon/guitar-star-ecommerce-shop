@@ -1,0 +1,2 @@
+class Pick < Product
+end

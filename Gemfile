@@ -20,6 +20,15 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
+# HAML for views
+gem 'haml-rails'
+# Elastic Search
+gem 'searchkick'
+# Pagination
+gem 'kaminari', :git => "git://github.com/amatsuda/kaminari.git", :branch => 'master'
+# gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.2'
+# gem 'twitter-bootstrap-rails', :group => :assets
+# gem 'kaminari', '~> 1.1', '>= 1.1.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -50,6 +59,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   # Automatic Ruby code style checking tool.
   gem 'rubocop', '~> 0.68.1'
+  # Pretty printing objects in rails console
+  gem 'awesome_print', '~> 1.8'
 end
 
 group :test do

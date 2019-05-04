@@ -1,0 +1,9 @@
+%figure.card.card-product
+  .img-wrap
+    = image_tag "#{product.p_type.downcase}.jpg"
+  %figcaption.info-wrap
+    %a.title{:href => product_path(product.id)}
+      = product.name
+    .price-wrap
+      %span.price-new
+        = "$ #{product.price}"

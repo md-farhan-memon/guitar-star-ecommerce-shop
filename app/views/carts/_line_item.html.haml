@@ -1,0 +1,28 @@
+%td
+  %figure.media
+    .img-wrap
+      = image_tag "#{line_item.product.type.downcase}.jpg"
+    %figcaption.media-body
+      %h6.title.text-truncate= line_item.product.name
+      %dl.dlist-inline.small
+        %dt Brand:
+        %dd= line_item.product.brand
+      - if line_item.product.model.present?
+        %dl.dlist-inline.small
+          %dt Model:
+          %dd= line_item.product.model
+      - if line_item.product.number_of_strings.nonzero?
+        %dl.dlist-inline.small
+          %dt Number of Strings:
+          %dd= line_item.product.number_of_strings
+      %dl.dlist-inline.small
+        %dt Category:
+        %dd= line_item.product.category_name
+%td
+  = line_item.quantity
+%td
+  .price-wrap
+    %var.price= "USD #{line_item.total_price}"
+    %small.text-muted= "(USD #{line_item.unit_price} each)"
+%td.text-right
+  %a.btn.btn-outline-danger{:href => line_item_path(line_item.id), "data-method" => "DELETE"} × Remove

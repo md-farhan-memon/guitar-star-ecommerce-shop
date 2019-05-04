@@ -1,0 +1,13 @@
+%section.section-content.bg.padding-y-sm
+  .container
+    -# = render 'filters'
+    .padding-y-sm
+      - search_term = params[:query].present? ? " for #{params[:query]}" : nil
+      - search_term = search_term.present? && !params[:type].eql?('All') ? "#{search_term} in #{params[:type]}" : search_term
+      %span= "#{@products.total_count} products#{search_term}"
+    .row-sm
+      - @products.results.each do |product|
+        .col-md-3.col-sm-6
+          = render 'card', product: product
+    .d-flex.justify-content-center
+      = paginate @products

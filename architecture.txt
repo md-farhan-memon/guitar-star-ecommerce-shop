@@ -1,0 +1,35 @@
+Guitar:
+    brand names -
+    model names -
+    number of strings -
+    quantity - 
+    price -
+    units
+        unique serial number -
+        buying date -
+        selling date -
+    type: -
+        electric -
+        acoustic -
+
+guitar picks:
+    type:
+        wooden one
+        plastic one
+
+straps:
+    type:
+        regular
+        large
+        extra large
+
+cart:
+    line_items:
+        products:
+            :qty
+            :total_price
+
+
+> Index page - paginated list - search by name, model name, brand name
+> Cart page - add/minus qty - guitar & accessories both
+> Cart - viewabe everywhere - all details - unit price - quantity - total price

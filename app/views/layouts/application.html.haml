@@ -1,0 +1,69 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    %title GuitarStar
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+    / jQuery
+    = javascript_include_tag 'application', "jquery-2.0.0.min.js"
+    / Bootstrap4 files
+    = stylesheet_link_tag 'application', "bootstrap.css"
+    = javascript_include_tag 'application', "bootstrap.bundle.min.js"
+    / Font awesome 5
+    = stylesheet_link_tag 'application', "fontawesome-all.min.css"
+    / plugin: fancybox
+    = stylesheet_link_tag 'application', "fancybox.min.css"
+    = javascript_include_tag 'application', "fancybox.min.js"
+    / plugin: owl carousel
+    = stylesheet_link_tag 'application', "owl.carousel.min.css"
+    = stylesheet_link_tag 'application', "owl.theme.default.css"
+    = javascript_include_tag 'application', "owl.carousel.min.js"
+    / custom style
+    = stylesheet_link_tag 'application', "ui.css"
+    = stylesheet_link_tag 'application', "responsive.css", media: "only screen and (max-width: 1200px)"
+    / custom javascript
+    = javascript_include_tag 'application', "script.js"
+    :javascript
+      /// some script
+      
+      // jquery ready start
+      $(document).ready(function() {
+      	// jQuery code
+      
+      }); 
+      // jquery end
+  %body
+    %header.section-header
+      %section.header-main.shadow-sm
+        .container
+          .row.align-items-center
+            .col-lg-3.col-sm-4
+              %a.navbar-brand{:href => "/"}
+                = image_tag 'logo.png', size: 50
+                GuitarStar
+            .col-lg-6.col-sm-8
+              %form.py-1{:action => "/"}
+                .input-group.w-100
+                  %select.custom-select{:name => "type"}
+                    = options_for_select(select_type_options, params[:type])
+                  %input.form-control{:name => "query", :placeholder => "Search", :style => "width:50%;", :type => "text", :value => params[:query]}
+                  .input-group-append
+                    %button.btn.btn-warning{:type => "submit"}
+                      %i.fa.fa-search
+                      Search
+            .col-lg-3.col-sm-12
+              .widgets-wrap.float-right.row.no-gutters.py-1
+                .col-auto
+                  %a.widget-header{:href => cart_path(current_cart.id)}
+                    .icontext
+                      .icon-wrap
+                        %i.text-warning.icon-sm.fa.fa-shopping-cart
+                      .text-wrap.text-dark
+                        %span.small.round.badge.badge-secondary
+                          = cart_quantity
+    = yield

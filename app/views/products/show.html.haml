@@ -1,0 +1,54 @@
+%section.section-content.bg.padding-y-sm
+  .container
+    .d-flex.justify-content-center
+      .col-xl-10.col-md-9.col-sm-12
+        %main.card
+          .row.no-gutters
+            %aside.col-sm-6.border-right
+              %article.gallery-wrap
+                .img-big-wrap
+                  %div
+                    %a{"data-fancybox" => ""}
+                      = image_tag "#{@product.p_type.downcase}.jpg"
+                .img-small-wrap
+                  .item-gallery
+                    = image_tag "#{@product.p_type.downcase}.jpg"
+            %aside.col-sm-6
+              %article.card-body
+                %h3.title.mb-3= @product.name
+                .mb-3
+                  %var.price.h3.text-warning
+                    %span.currency US $
+                    %span.num= @product.price
+                %dl
+                  %dt Description
+                  %dd
+                    %p
+                      Here goes description consectetur adipisicing elit, sed do eiusmod
+                      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                      quis nostrud exercitation ullamco
+                %dl.row
+                  %dt.col-sm-3 Brand
+                  %dd.col-sm-9= @product.brand
+                  - if @product.model.present?
+                    %dt.col-sm-3 Model
+                    %dd.col-sm-9= @product.model
+                  - if @product.number_of_strings.nonzero?
+                    %dt.col-sm-3 Strings
+                    %dd.col-sm-9= @product.number_of_strings
+                  %dt.col-sm-3 Category
+                  %dd.col-sm-9= @product.category_name
+                %hr
+                %form{:action => move_carts_path, :method => "POST", :authenticity_token => true}
+                  .row
+                    .col-sm-5
+                      .form-group
+                        %select#exampleFormControlSelect1.form-control-sm{:style => "width:70px;", :name => "quantity"}
+                          = options_for_select((1..(@product.purchasable_quantity)).to_a)
+                    .col-sm-2
+                      .form-group
+                        %input{:name => "product_id", :type => "hidden", :value => @product.id}
+                    .col-sm-5
+                      %button.btn.btn-warning{:type => "submit"}
+                        %i.fa.fa-cart-plus
+                        Add to cart

@@ -1,0 +1,2 @@
+class Guitar < Product
+end
