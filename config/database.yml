@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: guitar_star_production
-  username: guitar_star
+  database: <%= ENV['GUITAR_STAR_DATABASE_NAME'] || 'guitar_star_production' %>
+  username: <%= ENV['GUITAR_STAR_DATABASE_USERNAME'] || 'guitar_star' %>
   password: <%= ENV['GUITAR_STAR_DATABASE_PASSWORD'] %>
