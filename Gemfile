@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.3.7'
+ruby '2.4.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
@@ -25,10 +25,7 @@ gem 'haml-rails'
 # Elastic Search
 gem 'searchkick'
 # Pagination
-gem 'kaminari', :git => "git://github.com/amatsuda/kaminari.git", :branch => 'master'
-# gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.2'
-# gem 'twitter-bootstrap-rails', :group => :assets
-# gem 'kaminari', '~> 1.1', '>= 1.1.1'
+gem 'kaminari', git: 'https://github.com/amatsuda/kaminari.git', branch: 'master'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
