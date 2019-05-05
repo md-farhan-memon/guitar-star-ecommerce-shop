@@ -21,6 +21,7 @@ gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # HAML for views
+gem 'font-awesome-rails', github: 'bokmann/font-awesome-rails', branch: 'master'
 gem 'haml-rails'
 # Elastic Search
 gem 'searchkick'
