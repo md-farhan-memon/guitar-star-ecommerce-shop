@@ -19,7 +19,17 @@
         %dt Category:
         %dd= line_item.product.category_name
 %td
-  = line_item.quantity
+  %form{:action => line_item_path(line_item.id), :method => "POST"}
+    .row
+      .col-sm-2
+        %input{:name => "_method", :type => "hidden", :value => "PUT"}
+      .col-sm-5
+        .form-group
+          %select#exampleFormControlSelect1.form-control-sm{:style => "width:70px;", :name => "quantity"}
+            = options_for_select((1..(line_item.product.purchasable_quantity)).to_a, line_item.quantity)
+      .col-sm-5
+        %button.btn.btn-warning{:type => "submit"}
+          %i.fa.fa-refresh
 %td
   .price-wrap
     %var.price= "USD #{line_item.total_price}"

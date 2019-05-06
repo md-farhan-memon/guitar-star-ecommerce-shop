@@ -7,9 +7,9 @@
             %thead.text-muted
               %tr
                 %th{:scope => "col"} Product
-                %th{:scope => "col", :width => "80"} Quantity
-                %th{:scope => "col", :width => "210"} Price
-                %th.text-right{:scope => "col", :width => "150"} Action
+                %th{:scope => "col", :width => "200"} Quantity
+                %th{:scope => "col", :width => "160"} Price
+                %th.text-right{:scope => "col", :width => "70"} Action
             %tbody
               - @cart.line_items.each do |line_item|
                 %tr

@@ -30,6 +30,9 @@
     = stylesheet_link_tag 'application', "responsive.css", media: "only screen and (max-width: 1200px)"
     / custom javascript
     = javascript_include_tag 'application', "script.js"
+    / Flash messages
+    .container
+      = flash_messages
     :javascript
       /// some script
       
